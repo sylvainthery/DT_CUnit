@@ -1,4 +1,4 @@
-name: CUnit
+name: DT_CUnit
 on:
   push:
      branch:
@@ -29,7 +29,7 @@ jobs:
       - uses: actions/checkout@v1
       - name: 'install deps'
         run: vcpkg install cunit:x64-windows
-      - name: 'Trying to compile cunit...'
+      - name: 'Trying to compile DT_CUnit.'
         run: |
           mkdir Build
           cd Build
@@ -42,8 +42,8 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: 'install deps'
-        run: brew install cppunit
-      - name: 'Trying to compile ...'
+        run: brew install cunit
+      - name: 'Trying to compile DT_CUnit'
         run:  |
           mkdir Build
           cd Build

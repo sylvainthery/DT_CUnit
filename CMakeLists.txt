@@ -6,9 +6,10 @@ add_executable (${PROJECT_NAME} "")
 
 target_sources(${PROJECT_NAME} PRIVATE test1.c)
 target_link_libraries(${PROJECT_NAME} PRIVATE cunit)
-# if (APPLE)
+if (APPLE)
 target_include_directories(${PROJECT_NAME} PUBLIC /usr/local/include)
-target_link_directories(${PROJECT_NAME} PUBLIC /usr/local/lib)# endif()             
+target_link_directories(${PROJECT_NAME} PUBLIC /usr/local/lib
+endif()             
 
 enable_testing()
 
