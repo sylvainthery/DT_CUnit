@@ -20,7 +20,10 @@ jobs:
           mkdir Build
           cd Build
           cmake ..
-          cmake --build . 
+          cmake --build .
+      - name: 'Testing'
+        run:  | 
+          make test
 
   build-windows:
     name: 'On Windows'
@@ -49,4 +52,7 @@ jobs:
           cd Build
           cmake .. 
           cmake --build . 
+      - name: 'Testing'
+        run:  | 
+          make test
  
