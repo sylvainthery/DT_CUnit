@@ -2,7 +2,7 @@ name: DT_CUnit
 on:
   push:
      branches:
-       - CI
+       - ci
 
 jobs:
   build-linux:
