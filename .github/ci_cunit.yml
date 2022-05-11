@@ -1,0 +1,52 @@
+name: CUnit
+on:
+  push:
+     branch:
+       - CI
+
+jobs:
+  build-linux:
+    name: 'On Linux'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: 'Package installations'
+        shell: bash
+        run: |
+          sudo apt update
+          sudo apt install libcunit1-dev 
+      - name: 'Trying to compile cunit_practicle'
+        run:  |
+          mkdir Build
+          cd Build
+          cmake ..
+          cmake --build . 
+
+  build-windows:
+    name: 'On Windows'
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: 'install deps'
+        run: vcpkg install cunit:x64-windows
+      - name: 'Trying to compile cunit...'
+        run: |
+          mkdir Build
+          cd Build
+          cmake .. "-DCMAKE_TOOLCHAIN_FILE=$env:VCPKG_INSTALLATION_ROOT\scripts\buildsystems\vcpkg.cmake"
+          cmake --build .
+
+  build-OsX:
+    name: 'On Mac'
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: 'install deps'
+        run: brew install cppunit
+      - name: 'Trying to compile ...'
+        run:  |
+          mkdir Build
+          cd Build
+          cmake .. 
+          cmake --build . 
+ 
