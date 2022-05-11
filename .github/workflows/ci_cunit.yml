@@ -1,7 +1,7 @@
 name: DT_CUnit
 on:
   push:
-     branch:
+     branches:
        - CI
 
 jobs:
