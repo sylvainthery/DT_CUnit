@@ -21,18 +21,17 @@ jobs:
           cd Build
           cmake ..
           make
-      - uses: actions/upload-artifact@v1
+      - uses: actions/upload-artifact@v3
         with:
           name: binaries
-          path: Build
+          path: Build/
   test-linux:
     name: 'Test On Linux'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/download-artifact@v1
+      - uses: actions/download-artifact@v3
         with:
           name: binaries
-          path: Build
       - run: |
         cd Build
         make test
