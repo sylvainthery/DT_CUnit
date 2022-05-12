@@ -25,7 +25,7 @@ jobs:
       #   with:
       #     name: mybinaries
       #     path: Build/
-       - name: 'Testing'
+      - name: 'Testing'
         run:  |
           cd Build
           chmod -R +x . 
