@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+      - uses: actions/upload-artifact@v2
+
       - name: 'Package installations'
         shell: bash
         run: |
@@ -22,6 +24,7 @@ jobs:
           cmake ..
           cmake --build .
       - name: 'Testing'
+        uses:actions/upload-artifact@v2
         run:  | 
           make test
 
