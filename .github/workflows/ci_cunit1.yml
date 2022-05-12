@@ -2,7 +2,7 @@ name: DT_CUnit
 on:
   push:
      branches:
-       - ci
+       - ci1
 
 jobs:
   build-linux:
@@ -31,6 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build-linux
     steps:
+      - uses: actions/checkout@v1
       - uses: actions/dowload-artifact@v3
         with:
           name: mybinaries
