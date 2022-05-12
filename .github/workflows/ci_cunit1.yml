@@ -44,7 +44,7 @@ jobs:
       - name: 'Testing'
         run:  |
           cd Build
-          chmod +x test
+          chmod -R +x . 
           make test
 
   build-windows:
