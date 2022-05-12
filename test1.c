@@ -48,7 +48,7 @@ int main()
         exit(1);
     CU_basic_run_tests();
     int nb =  CU_get_number_of_failures();
-    printf("ERR=%d\n",nb);
+//    printf("ERR=%d\n",nb);
     return nb;
 
 }

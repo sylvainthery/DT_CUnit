@@ -11,7 +11,10 @@ target_include_directories(${PROJECT_NAME} PUBLIC /usr/local/include)
 target_link_directories(${PROJECT_NAME} PUBLIC /usr/local/lib)
 endif()             
 
+# target_compile_options(${PROJECT_NAME} PRIVATE --coverage -g -O0)
+# target_link_options(${PROJECT_NAME} PUBLIC --coverage -g -O0)
+
 enable_testing()
 
-add_test(NAME test_one_cmake COMMAND ${PROJECT_NAME} --verbose)
+add_test(NAME test_one_cmake COMMAND ${PROJECT_NAME})
 
