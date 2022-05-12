@@ -32,7 +32,7 @@ jobs:
     needs: build-linux
     steps:
       - uses: actions/checkout@v1
-      - uses: actions/dowload-artifact@v3
+      - uses: actions/download-artifact@v3
         with:
           name: mybinaries
       - name: 'Package installations'
