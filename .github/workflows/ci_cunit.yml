@@ -30,13 +30,18 @@ jobs:
     name: 'Test On Linux'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/download-artifact@v3
+      - uses: actions/dowload-artifact@v3
         with:
           name: mybinaries
-      - name: 'Testing '
+      - name: 'Package installations'
+        shell: bash
         run: |
-        cd Build
-        make test
+          sudo apt update
+          sudo apt install libcunit1-dev 
+      - name: 'Testing'
+        run:  |
+          cd Build
+          make test
 
   build-windows:
     name: 'On Windows'
