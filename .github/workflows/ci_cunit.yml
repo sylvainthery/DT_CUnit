@@ -10,8 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: actions/upload-artifact@v2
-
       - name: 'Package installations'
         shell: bash
         run: |
@@ -22,10 +20,11 @@ jobs:
           mkdir Build
           cd Build
           cmake ..
-          cmake --build .
+          make
       - name: 'Testing'
-        uses:actions/upload-artifact@v2
         run:  | 
+          pwd
+          cd Build
           make test
 
   build-windows:
