@@ -15,15 +15,16 @@ build:
   # instead of calling g++ directly you can also use some build toolkit like make
   # install the necessary build tools when needed
   before_script:
-    - apt update && apt -y install libcunit1-dev
+    - apt update && apt -y install cmake libcunit1-dev
   script:
     - mkdir Build
     - cd Build
     - cmake ../
     - cmake --build .
+    - make test
 
 # run tests using the binary built before
-test:
-  stage: test
-  script:
-    - make test
+# test:
+#   stage: test
+#   script:
+#     - make test
