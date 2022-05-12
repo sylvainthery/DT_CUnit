@@ -26,16 +26,17 @@ jobs:
           name: mybinaries
           path: Build/
 
-  # test-linux:
-  #   name: 'Test On Linux'
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/download-artifact@v3
-  #       with:
-  #         name: mybinaries
-  #     - run: |
-  #       cd Build
-  #       make test
+  test-linux:
+    name: 'Test On Linux'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: mybinaries
+      - name: 'Testing '
+        run: |
+        cd Build
+        make test
 
   build-windows:
     name: 'On Windows'
