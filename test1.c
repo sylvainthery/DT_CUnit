@@ -8,7 +8,6 @@ void testFunc1()
     int x = 3;
     int y = 9;
     int z = y/x;
-    CU_ASSERT_EQUAL_FATAL(z,2)
     CU_ASSERT_EQUAL_FATAL(z,3)
 }
 
@@ -16,7 +15,6 @@ void testFunc1()
 void testFunc2()
 {
     double a = cos (M_PI/2.0);
-    CU_ASSERT_EQUAL_FATAL(4444,3)
     CU_ASSERT_DOUBLE_EQUAL(a,0.0,0.000001);
 }
 
